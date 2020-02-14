@@ -4,7 +4,7 @@
 # In[ ]:
 
 
-import torchtext import data, datasets
+from torchtext import data, datasets
 
 PAD, BOS, EOS = 1,2,3
 
@@ -75,6 +75,7 @@ class LanguageModelDataset(data.Dataset):
                     examples.append(data.Example.fromlist(
                         [line],fields))
         
-        super(LanguageModelDataset, self).__init__(examples, fields, **kwargs)
+        super(LanguageModelDataset, self).__init__(examples, fields, **kwargs) #super()와 기능은 같음 / super(파생클래스,self) 형태로 명시적으로 표기할 수도 있음
+        # __init__() 괄호 안에 적어둔 변수들은 클래스 변수로 접근 가능
         
 
